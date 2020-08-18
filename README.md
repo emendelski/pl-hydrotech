@@ -1,6 +1,7 @@
-# webpack-starter-kit
+# pl-hydrotech
 
-> Starter Kit for every-day frontend work
+> WWW for Hydrotech
+> _New Age For Watering Solutions_
 
 ## Build Setup
 

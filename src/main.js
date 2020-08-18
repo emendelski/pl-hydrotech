@@ -15,5 +15,5 @@ new fullpage('#fullpage', {
     'contact'
   ],
   menu: '#menu',
-  responsiveHeight: 500,
+  responsiveHeight: 900,
 });

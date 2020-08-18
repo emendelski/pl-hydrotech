@@ -74,3 +74,15 @@ body {
 .subheading {
   @include font-size(2rem);
 }
+
+.nav {
+
+  &__link {
+    text-decoration: none;
+    color: tomato;
+
+    &.active {
+      background-color: greenyellow
+    }
+  }
+}

@@ -119,7 +119,6 @@
       "object-curly-spacing": "off",
       "comma-dangle": "off",
       "object-curly-newline": "off",
-      "object-curly-newline": "off",
       "implicit-arrow-linebreak": "off",
       "function-paren-newline": "off"
     }

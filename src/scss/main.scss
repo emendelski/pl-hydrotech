@@ -1,3 +1,4 @@
+@import "~rfs/scss";
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,700');
 
 *,
@@ -64,4 +65,12 @@ body {
     justify-content: center;
     min-height: 100%;
   }
+}
+
+.heading {
+  @include font-size(3rem);
+}
+
+.subheading {
+  @include font-size(2rem);
 }

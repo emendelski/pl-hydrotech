@@ -8,31 +8,12 @@
 
 html {
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 body {
-  background: #0f2027;
-  background: linear-gradient(to left, #2c5364, #203a43, #0f2027);
   font-family: Rubik, sans-serif;
-  padding: 3rem;
-  margin: 0;
-  color: #fff;
-  width: 100vw;
-  height: 100vh;
 }
 
 .content {
-  position: absolute;
-  left: 3rem;
-  bottom: 3rem;
-  margin: 0;
-  padding: 0;
 
-  > strong {
-    display: block;
-    font-size: 1.125em;
-    margin-bottom: 0.25em;
-    letter-spacing: 0.1em;
-  }
 }

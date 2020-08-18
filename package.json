@@ -1,7 +1,7 @@
 {
   "name": "pl-hydrotech",
-  "version": "1.0.0",
-  "description": "Starter Kit for every-day frontend work",
+  "version": "0.1.0",
+  "description": "WWW for Hydrotech",
   "author": "Kamil Mendelski <kontakt@frontlabs.pl>",
   "repository": {
     "type": "git",

@@ -1,19 +1,14 @@
 import './scss/main.scss';
+import fullpage from 'fullpage.js';
 
-// Local components
-function component() {
-  const element = document.createElement('div');
-  element.innerHTML = [
-    'webpack',
-    'scss',
-    'autoprefixer',
-    'babel',
-    'eslint',
-    'stylelint',
-    'ftp-deploy',
-  ].join(' &bull; ');
-
-  return element;
-}
-
-document.querySelector('.content').appendChild(component());
+// eslint-disable-next-line
+new fullpage('#fullpage', {
+  autoScrolling:true,
+  anchors:[
+    'problem',
+    'solution',
+    'technology',
+    'about',
+    'contact'],
+  licenseKey: '891E39CB-32474BA9-909C7F6B-4B8A88C1'
+});

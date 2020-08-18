@@ -1,3 +1,4 @@
+@import "~fullpage.js/dist/fullpage.min.css";
 @import "~rfs/scss";
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,700');
 
@@ -44,6 +45,12 @@ body {
 
   &__link {
     padding: .5em;
+    text-decoration: none;
+    color: tomato;
+
+    &.active {
+      background-color: greenyellow
+    }
   }
 }
 
@@ -60,10 +67,6 @@ body {
   &__content {
     max-width: 80ch;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100%;
   }
 }
 
@@ -73,16 +76,4 @@ body {
 
 .subheading {
   @include font-size(2rem);
-}
-
-.nav {
-
-  &__link {
-    text-decoration: none;
-    color: tomato;
-
-    &.active {
-      background-color: greenyellow
-    }
-  }
 }

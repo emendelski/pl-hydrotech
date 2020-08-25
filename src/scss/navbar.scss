@@ -11,12 +11,14 @@
     background-color: transparent;
 
     @include md {
-      padding: 3rem 0;
+      padding: 2rem 0;
     }
   }
 }
 
 .nav {
+  max-width: 1200px;
+  margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   display: flex;

@@ -92,6 +92,7 @@
     padding-left: 0;
     @include md {
       display: flex;
+      margin-top: 4rem;
     }
   }
   &__item {
@@ -130,6 +131,11 @@
     }
   }
   &__name {
+    margin-bottom: 0.2rem;
+  }
+  &__position {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -236,8 +242,7 @@
 
   &__label {
     display: block;
-    margin-top: 0.2rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0 0.5rem 1rem;
   }
   &__input {
     width: 100%;
@@ -246,7 +251,7 @@
     background-color: $white;
     font-size: 1rem;
     font-family: inherit;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
 
     &:focus {
       outline: none;
@@ -255,6 +260,6 @@
 
   &__submit {
     margin-left: auto;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 }

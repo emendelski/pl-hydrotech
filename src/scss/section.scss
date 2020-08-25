@@ -4,7 +4,7 @@
   position: relative;
 
   &__content {
-    padding-top: 5rem;
+    padding-top: calc(5rem + 3.3rem);
     padding-bottom: 5rem;
     position: relative;
     z-index: 1;
@@ -12,6 +12,14 @@
     margin: 0 auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+
+    @include md {
+      padding-top: calc(5rem + 4.313rem);
+    }
+
+    &--header {
+      padding-top: 5rem;
+    }
   }
 
   &__arrow {

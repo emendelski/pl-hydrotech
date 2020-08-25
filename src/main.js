@@ -18,7 +18,7 @@ const navBtn = document.querySelector('[data-nav-toggle]');
 const navContent = document.querySelector('[data-nav]');
 
 if (navBtn) {
-  navBtn.addEventListener('click', e => {
+  navBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if (navContent) {
       navContent.classList.add('nav__list--open');
@@ -34,8 +34,8 @@ if (navBtn) {
 const arrows = document.querySelectorAll('[data-next]');
 
 if (arrows.length) {
-  arrows.forEach(arr => {
-    arr.addEventListener('click', e => {
+  arrows.forEach((arr) => {
+    arr.addEventListener('click', (e) => {
       e.preventDefault();
       fp.moveSectionDown();
     });
@@ -48,17 +48,17 @@ const openItems = document.querySelectorAll('[data-modal-open]');
 const modals = document.querySelectorAll('[data-modal]');
 
 if (openItems.length) {
-  openItems.forEach(i => {
-    i.addEventListener('click', e => {
+  openItems.forEach((i) => {
+    i.addEventListener('click', (e) => {
       e.preventDefault();
       const target = i.dataset.modalOpen;
-      const modal = [...modals].find(el => el.dataset.modal === target);
+      const modal = [...modals].find((el) => el.dataset.modal === target);
       modal.classList.add('modal--open');
       fp.setAllowScrolling(false);
       fp.setKeyboardScrolling(false);
       const closeItems = modal.querySelectorAll('[data-modal-close]');
-      closeItems.forEach(cl => {
-        cl.addEventListener('click', ev => {
+      closeItems.forEach((cl) => {
+        cl.addEventListener('click', (ev) => {
           ev.preventDefault();
           modal.classList.remove('modal--open');
           fp.setAllowScrolling(true);

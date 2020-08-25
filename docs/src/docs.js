@@ -21,11 +21,11 @@ const isInViewport = (elem, oT = 0, oB = 0) => {
   return top >= 0 + oT && left >= 0 && bottom <= ih - oB && right <= iw;
 };
 
-const menuTree = arr => {
+const menuTree = (arr) => {
   const mostRecent = [null, null, null, null, null];
   mostRecent[0] = new MenuNode(0);
 
-  arr.forEach(el => {
+  arr.forEach((el) => {
     const {tagName} = el;
     const level = parseInt(tagName.charAt(1), 10);
     const node = new MenuNode(level, el);
@@ -43,10 +43,10 @@ const menuTree = arr => {
   return mostRecent[0].children;
 };
 
-const menuToElement = menu => {
+const menuToElement = (menu) => {
   const ul = document.createElement('ul');
 
-  menu.forEach(item => {
+  menu.forEach((item) => {
     const {id, innerHTML} = item.el;
 
     const li = document.createElement('li');
@@ -68,11 +68,11 @@ const menuToElement = menu => {
   return ul;
 };
 
-const makeNavLinksSmooth = elemClass => {
+const makeNavLinksSmooth = (elemClass) => {
   const navLinks = document.querySelectorAll(elemClass);
 
-  navLinks.forEach(link =>
-    link.addEventListener('click', e => {
+  navLinks.forEach((link) =>
+    link.addEventListener('click', (e) => {
       e.preventDefault();
 
       document.querySelector(link.hash).scrollIntoView({
@@ -82,9 +82,9 @@ const makeNavLinksSmooth = elemClass => {
   );
 };
 
-const spyScrolling = elements => {
+const spyScrolling = (elements) => {
   window.onscroll = () => {
-    elements.forEach(el => {
+    elements.forEach((el) => {
       const {id} = el;
 
       if (isInViewport(el, 0, 300)) {

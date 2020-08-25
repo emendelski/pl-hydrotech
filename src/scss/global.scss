@@ -9,7 +9,9 @@ html {
 }
 
 body {
-  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
   margin: 0;
   background-color: $c6;
   color: $white;
@@ -43,7 +45,7 @@ body {
 
   &::after {
     z-index: 1;
-    content: " ";
+    content: ' ';
     position: absolute;
     top: 0;
     right: 0;
@@ -58,7 +60,6 @@ body {
 
   &:focus,
   &:hover {
-
     &::after {
       opacity: 1;
     }

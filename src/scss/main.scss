@@ -119,12 +119,13 @@
     max-width: 12rem;
     margin-left: auto;
     margin-right: auto;
+    border: 5px solid transparent;
 
     &:focus,
     &:hover {
       transform: scale(1.05);
       transform-origin: center;
-      border: 5px solid $c1;
+      border-color: $c1;
     }
   }
   &__name {

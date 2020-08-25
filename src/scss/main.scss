@@ -141,7 +141,7 @@
   opacity: 0;
   transition: transform $speed, opacity $speed;
   &--open {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -151,7 +151,7 @@
   }
   &__backdrop {
     background-color: $bdrop;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;

@@ -1,0 +1,14 @@
+.section {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

@@ -1,0 +1,39 @@
+.nav {
+  position: fixed;
+  top: 3rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+
+  &__logo {
+    color: $white;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  &__item {
+    & + & {
+      margin-left: 1em;
+    }
+  }
+
+  &__link {
+    padding: .5em;
+    text-decoration: none;
+    font-weight: $fw-regular;
+    color: $white;
+
+    &:focus,
+    &:hover,
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}

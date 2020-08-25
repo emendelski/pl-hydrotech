@@ -32,12 +32,12 @@ if (navBtn) {
 const arrows = document.querySelectorAll('[data-next]');
 
 if (arrows.length) {
-  arrows.forEach(arr=> {
-    arr.addEventListener('click', e =>{
+  arrows.forEach(arr => {
+    arr.addEventListener('click', e => {
       e.preventDefault();
       fp.moveSectionDown();
-    })
-  })
+    });
+  });
 }
 
 //Modal

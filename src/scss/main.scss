@@ -224,10 +224,6 @@
     flex: 0 0 50%;
     max-width: 50%;
     margin-top: 4rem;
-
-    @include md {
-      margin-top: 0;
-    }
   }
   &__address {
     font-style: normal;

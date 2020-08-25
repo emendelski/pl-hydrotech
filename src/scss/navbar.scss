@@ -6,6 +6,7 @@
   z-index: 1;
   background-color: $white;
   padding: 0.5rem 0;
+  transition: all $speed;
 
   .fp-viewing-header & {
     background-color: transparent;

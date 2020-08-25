@@ -90,7 +90,7 @@
   },
   "prettier": {
     "$schema": "http://json.schemastore.org/prettierrc",
-    "arrowParens": "avoid",
+    "arrowParens": "always",
     "bracketSpacing": false,
     "jsxBracketSameLine": false,
     "jsxSingleQuote": false,

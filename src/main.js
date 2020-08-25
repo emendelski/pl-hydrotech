@@ -1,4 +1,5 @@
 import './scss/main.scss';
+import IScroll from 'fullpage.js/vendors/scrolloverflow'; // eslint-disable-line no-unused-vars
 import fullpage from 'fullpage.js';
 
 // eslint-disable-next-line
@@ -7,6 +8,7 @@ const fp = new fullpage('#fullpage', {
   autoScrolling: true,
   anchors: ['header', 'problem', 'solution', 'technology', 'about', 'team', 'contact'],
   menu: '#menu',
+  scrollOverflow: true,
   responsiveHeight: 640,
 });
 

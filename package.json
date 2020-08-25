@@ -125,7 +125,11 @@
       "function-paren-newline": "off",
       "indent": "off",
       "no-tabs": "off",
-      "key-spacing": "off"
+      "key-spacing": "off",
+      "semi": "off",
+      "arrow-spacing": "off",
+      "padded-blocks": "off",
+      "spaced-comment": "off"
     }
   },
   "eslintIgnore": [
@@ -148,7 +152,6 @@
           ]
         }
       ],
-      "block-opening-brace-space-before": "always",
       "declaration-colon-space-after": "always",
       "declaration-colon-space-before": "never",
       "declaration-block-single-line-max-declarations": 1,
@@ -186,7 +189,8 @@
       "string-quotes": null,
       "rule-empty-line-before": null,
       "at-rule-empty-line-before": null,
-      "indentation": null
+      "indentation": null,
+      "block-opening-brace-space-before": null
     }
   }
 }

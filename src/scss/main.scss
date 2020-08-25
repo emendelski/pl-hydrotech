@@ -116,16 +116,17 @@
     transition: transform $speed;
     cursor: pointer;
     margin: 0;
-    max-width: 12rem;
     margin-left: auto;
     margin-right: auto;
-    border: 5px solid transparent;
+    outline: 5px solid transparent;
+    width: 12.75rem;
+    height: 12.75rem;
 
     &:focus,
     &:hover {
       transform: scale(1.05);
       transform-origin: center;
-      border-color: $c1;
+      outline-color: $c1;
     }
   }
   &__name {
@@ -161,14 +162,21 @@
     position: relative;
     border-left: 2rem solid $c3;
     width: 42rem;
-    padding: 3rem 3rem 3rem 13rem;
+    padding: 3rem;
     color: $dark;
     box-shadow: 0 0.813rem 1.5rem rgba(black, 0.5);
+    @include md {
+      padding: 3rem 3rem 3rem 13rem;
+    }
   }
   &__figure {
-    position: absolute;
-    top: 2rem;
-    left: -7rem;
+    width: 12.75rem;
+    height: 12.75rem;
+    @include md {
+      position: absolute;
+      top: 2rem;
+      left: -7rem;
+    }
   }
   &__name {
     color: $c3;

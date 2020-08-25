@@ -178,7 +178,7 @@
     opacity: 0;
     transition: transform $speed, opacity $speed;
     @include md {
-      padding: 3rem 3rem 3rem 13rem;
+      padding: 3rem 3rem 5rem 10rem;
     }
     .modal--open & {
       transform: scale(1);
@@ -191,11 +191,18 @@
     @include md {
       position: absolute;
       top: 2rem;
-      left: -7rem;
+      left: -8rem;
     }
   }
   &__name {
     color: $c3;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include font-size(1.375rem);
+
+    & + p {
+      margin-top: 0;
+    }
   }
   &__close {
     position: absolute;

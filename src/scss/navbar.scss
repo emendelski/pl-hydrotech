@@ -1,26 +1,104 @@
-.nav {
+.navbar {
   position: fixed;
-  top: 3rem;
-  left: 1.5rem;
-  right: 1.5rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: $white;
+  padding: .5rem 0;
+
+  .fp-viewing-header & {
+    background-color: transparent;
+
+    @include md {
+      padding: 3rem 0;
+    }
+  }
+}
+
+.nav {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
 
   &__logo {
-    color: $white;
+    color: $dark;
+    width: 8.625rem;
+
+    @include lg {
+      width: 12.188rem;
+    }
+
+    > svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .fp-viewing-header & {
+      color: $white;
+
+      @include lg {
+        width: 12.188rem;
+      }
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    color: $dark;
+
+    @include md {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+
+    .fp-viewing-header & {
+      color: $white;
+    }
   }
 
   &__list {
-    display: flex;
-    align-items: center;
     list-style-type: none;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    padding-left: 0;
+
+    @include md {
+      display: flex;
+      flex-direction: row;
+    }
+    &--open {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      margin: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      background-color: $white;
+    }
   }
 
   &__item {
     & + & {
-      margin-left: 1em;
+      margin-top: 2rem;
+
+      @include md  {
+        margin-top: 0;
+        margin-left: 1em;
+      }
     }
   }
 
@@ -28,7 +106,13 @@
     padding: .5em;
     text-decoration: none;
     font-weight: $fw-regular;
-    color: $white;
+    color: $dark;
+
+    @include md {
+      .fp-viewing-header & {
+        color: $white;
+      }
+    }
 
     &:focus,
     &:hover,

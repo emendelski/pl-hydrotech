@@ -99,6 +99,7 @@
   &__figure {
     transition: transform $speed;
     cursor: pointer;
+    margin: 0;
 
     &:focus,
     &:hover {

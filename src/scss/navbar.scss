@@ -120,4 +120,11 @@
       text-decoration: underline;
     }
   }
+
+  &__close {
+
+    @include md {
+      display: none;
+    }
+  }
 }

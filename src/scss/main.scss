@@ -10,7 +10,6 @@
 @import 'section';
 
 // Sections
-
 .header {
   background-image: url('../images/header.jpg');
 }
@@ -29,6 +28,7 @@
   &__grid {
     list-style-type: none;
     margin-top: 3rem;
+    padding-left: 0;
 
     @include md {
       display: flex;
@@ -43,6 +43,8 @@
     max-width: 20%;
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 
     &+& {
       margin-top: 1.5rem;
@@ -88,18 +90,36 @@
   background-image: url('../images/team.jpg');
   &__grid {
     list-style-type: none;
+    padding-left: 0;
     @include md {
       display: flex;
     }
   }
   &__item {
-    flex: 0 0 20%;
-    max-width: 20%;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include md {
+      text-align: left;
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+    & + & {
+      margin-top: 3rem;
+
+      @include md {
+        margin-top: 0;
+      }
+    }
   }
   &__figure {
     transition: transform $speed;
     cursor: pointer;
     margin: 0;
+    max-width: 12rem;
+    margin-left: auto;
+    margin-right: auto;
 
     &:focus,
     &:hover {
@@ -180,6 +200,11 @@
   &__form {
     flex: 0 0 50%;
     max-width: 50%;
+    margin-top: 4rem;
+
+    @include md {
+      margin-top: 0;
+    }
   }
   &__address {
     font-style: normal;

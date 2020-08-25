@@ -138,16 +138,13 @@
   align-items: center;
   justify-content: center;
   transform: scale(0);
-  opacity: 0;
-  transition: transform $speed, opacity $speed;
   &--open {
     position: fixed;
+    transform: scale(1);
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    transform: scale(1);
-    opacity: 1;
   }
   &__backdrop {
     background-color: $bdrop;
@@ -156,6 +153,12 @@
     right: 0;
     bottom: 0;
     left: 0;
+    opacity: 0;
+    transition: opacity $speed;
+
+    .modal--open & {
+      opacity: 1;
+    }
   }
   &__body {
     background-color: $white;
@@ -165,8 +168,15 @@
     padding: 3rem;
     color: $dark;
     box-shadow: 0 0.813rem 1.5rem rgba(black, 0.5);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform $speed, opacity $speed;
     @include md {
       padding: 3rem 3rem 3rem 13rem;
+    }
+    .modal--open & {
+      transform: scale(1);
+      opacity: 1;
     }
   }
   &__figure {

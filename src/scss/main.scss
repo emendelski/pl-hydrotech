@@ -217,7 +217,7 @@
   &__grid {
     @include md {
       display: flex;
-      align-items: flex-start;
+      // align-items: flex-start;
     }
   }
   &__content {

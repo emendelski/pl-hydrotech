@@ -230,13 +230,17 @@
     }
   }
   &__content {
-    flex: 0 0 50%;
-    max-width: 50%;
+    @include md {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
   }
   &__form {
-    flex: 0 0 50%;
-    max-width: 50%;
     margin-top: 4rem;
+    @include md {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
   }
   &__address {
     font-style: normal;

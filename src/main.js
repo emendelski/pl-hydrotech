@@ -10,6 +10,7 @@ const fp = new fullpage('#fullpage', {
   menu: '#menu',
   scrollOverflow: true,
   responsiveHeight: 640,
+  responsiveWidth: 768,
 });
 
 // Nav
@@ -54,6 +55,7 @@ if (openItems.length) {
       const target = i.dataset.modalOpen;
       const modal = [...modals].find((el) => el.dataset.modal === target);
       modal.classList.add('modal--open');
+      document.body.style.overflow = 'hidden';
       fp.setAllowScrolling(false);
       fp.setKeyboardScrolling(false);
       const closeItems = modal.querySelectorAll('[data-modal-close]');
@@ -61,6 +63,7 @@ if (openItems.length) {
         cl.addEventListener('click', (ev) => {
           ev.preventDefault();
           modal.classList.remove('modal--open');
+          document.body.style.overflow = 'visible';
           fp.setAllowScrolling(true);
           fp.setKeyboardScrolling(true);
         });

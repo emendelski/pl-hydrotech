@@ -149,6 +149,7 @@
   display: flex;
   justify-content: center;
   transform: scale(0);
+  position: absolute;
   @include md {
     align-items: center;
   }

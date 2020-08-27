@@ -123,7 +123,11 @@
       color: $c4;
 
       .fp-viewing-header & {
-        color: $c2;
+        color: $c4;
+
+        @include md {
+          color: $c2;
+        }
       }
     }
   }

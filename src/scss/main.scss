@@ -147,9 +147,11 @@
 
 .modal {
   display: flex;
-  align-items: center;
   justify-content: center;
   transform: scale(0);
+  @include md {
+    align-items: center;
+  }
   &--open {
     position: fixed;
     transform: scale(1);
@@ -167,7 +169,6 @@
     left: 0;
     opacity: 0;
     transition: opacity $speed;
-
     .modal--open & {
       opacity: 1;
     }
@@ -175,15 +176,17 @@
   &__body {
     background-color: $white;
     position: relative;
-    border-left: 2rem solid $c3;
-    width: 42rem;
-    padding: 3rem;
+    width: 100%;
+    max-width: 42rem;
+    padding: 5rem 1rem 1rem;
     color: $dark;
     box-shadow: 0 0.813rem 1.5rem rgba(black, 0.5);
     transform: scale(0);
     opacity: 0;
     transition: transform $speed, opacity $speed;
+    overflow-y: auto;
     @include md {
+      border-left: 2rem solid $c3;
       padding: 3rem 3rem 5rem 10rem;
     }
     .modal--open & {
@@ -192,12 +195,15 @@
     }
   }
   &__figure {
+    margin: 0;
+    margin-bottom: 1rem;
     width: 12.75rem;
     height: 12.75rem;
     @include md {
       position: absolute;
       top: 2rem;
       left: -8rem;
+      z-index: 10;
     }
   }
   &__name {
@@ -212,11 +218,15 @@
   }
   &__close {
     position: absolute;
-    top: 1rem;
+    top: 5rem;
     right: 1rem;
     cursor: pointer;
     background-color: transparent;
     border: 0;
+    z-index: 9;
+    @include md {
+      top: 1rem;
+    }
   }
 }
 

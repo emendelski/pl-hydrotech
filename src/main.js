@@ -11,6 +11,7 @@ const fp = new fullpage('#fullpage', {
   scrollOverflow: true,
   responsiveHeight: 640,
   responsiveWidth: 768,
+  bigSectionsDestination: 'top',
 });
 
 // Nav

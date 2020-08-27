@@ -19,7 +19,8 @@
     "format:html": "prettier --write '**/*.html'",
     "format:js": "prettier --write '**/*.js'",
     "format:scss": "prettier --write '**/*.scss'",
-    "format": "npm run format:html && npm run format:scss && npm run format:js"
+    "format": "npm run format:html && npm run format:scss && npm run format:js",
+    "sync": "rsync -auv dist/ zenbox:domains/frontlabs.pl/public_html/projects/2020/08/pl-hydrotech/"
   },
   "private": true,
   "engines": {

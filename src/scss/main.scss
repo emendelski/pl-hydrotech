@@ -188,6 +188,7 @@
     @include md {
       border-left: 2rem solid $c3;
       padding: 3rem 3rem 5rem 10rem;
+      overflow: initial;
     }
     .modal--open & {
       transform: scale(1);
@@ -203,7 +204,6 @@
       position: absolute;
       top: 2rem;
       left: -8rem;
-      z-index: 10;
     }
   }
   &__name {

@@ -17,6 +17,15 @@
 
 .cookies-navbar {
   position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  .fp-viewing-header & {
+    background-color: rgba(0, 0, 0, 0.6);
+
+    @include md {
+      padding: 0.5rem 0;
+    }
+  }
 }
 
 .cookie-bar {

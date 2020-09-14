@@ -1,6 +1,7 @@
 import './scss/main.scss';
 import IScroll from 'fullpage.js/vendors/scrolloverflow'; // eslint-disable-line no-unused-vars
 import fullpage from 'fullpage.js';
+import Cookies from 'js-cookie';
 
 // eslint-disable-next-line
 const fp = new fullpage('#fullpage', {
@@ -70,5 +71,33 @@ if (openItems.length) {
         });
       });
     });
+  });
+}
+
+// Cookies Notice
+
+const cookieConfig = {
+  expires: 30,
+};
+
+const cookieBox = document.querySelector('[data-cookie-bar]');
+const cookieCon = Cookies.get('hydrotech_cookie_notice', cookieConfig) === 'true';
+
+if (cookieBox && cookieCon) {
+  cookieBox.remove();
+} else if (cookieBox && !cookieCon) {
+  cookieBox.classList.add('is-active');
+
+  const cookieClose = cookieBox.querySelector('[data-cookie-button]');
+
+  cookieClose.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    cookieBox.classList.remove('is-active');
+    Cookies.set('hydrotech_cookie_notice', true, cookieConfig);
+
+    setTimeout(() => {
+      cookieBox.remove();
+    }, 300);
   });
 }

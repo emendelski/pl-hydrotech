@@ -18,6 +18,22 @@
   &--left {
     text-align: left;
   }
+
+  &--accent {
+    color: $c2;
+  }
+}
+
+.cookie-heading {
+  max-width: 46rem;
+  margin: 0 auto 1rem;
+  font-weight: $fw-bold;
+  line-height: 1.1;
+  @include font-size(1.25rem);
+
+  p + & {
+    margin-top: 5rem;
+  }
 }
 
 .subheading {

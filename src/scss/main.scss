@@ -238,10 +238,13 @@
   &__grid {
     @include md {
       display: flex;
-      align-items: flex-start;
+      align-items: stretch;
     }
   }
   &__content {
+    display: flex;
+    flex-direction: column;
+
     @include md {
       flex: 0 0 50%;
       max-width: 50%;
@@ -257,6 +260,13 @@
   &__address {
     font-style: normal;
     margin-bottom: 3rem;
+  }
+  &__link {
+    margin-top: 2rem;
+
+    @include md {
+      margin-top: auto;
+    }
   }
 }
 

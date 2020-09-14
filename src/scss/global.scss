@@ -77,6 +77,10 @@ body {
   &:hover {
     color: $c2;
   }
+
+  &--sm {
+    font-size: 0.75rem;
+  }
 }
 
 .fp-scroller {

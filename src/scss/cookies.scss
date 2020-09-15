@@ -1,0 +1,84 @@
+.cookies {
+  background-image: url('../images/solution.jpg');
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .heading {
+    margin-bottom: 5rem;
+  }
+}
+
+.cookies-navbar {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  .fp-viewing-header & {
+    background-color: rgba(0, 0, 0, 0.6);
+
+    @include md {
+      padding: 0.5rem 0;
+    }
+  }
+}
+
+.cookie-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $c3;
+  font-size: 0.875rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  opacity: 0;
+  transition: opacity $speed;
+
+  &.is-active {
+    opacity: 1;
+  }
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    @include md {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__text > p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__link {
+    color: inherit;
+    transition: color $speed;
+
+    &:focus,
+    &:hover {
+      color: $c2;
+    }
+  }
+
+  &__button {
+    margin-top: 1rem;
+
+    @include md {
+      flex: 0 0 auto;
+      margin-top: 0;
+      margin-left: 3rem;
+    }
+  }
+}

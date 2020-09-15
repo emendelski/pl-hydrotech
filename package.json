@@ -19,7 +19,8 @@
     "format:html": "prettier --write '**/*.html'",
     "format:js": "prettier --write '**/*.js'",
     "format:scss": "prettier --write '**/*.scss'",
-    "format": "npm run format:html && npm run format:scss && npm run format:js"
+    "format": "npm run format:html && npm run format:scss && npm run format:js",
+    "sync": "rsync -auv dist/ zenbox:domains/frontlabs.pl/public_html/projects/2020/08/pl-hydrotech/"
   },
   "private": true,
   "engines": {
@@ -28,9 +29,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "fullpage.js": "^3.0.9",
+    "js-cookie": "^2.2.1",
     "normalize-scss": "^7.0.1",
     "prismjs": "^1.20.0",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.5",
+    "rfs": "^9.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.10.1",
@@ -88,7 +92,7 @@
   },
   "prettier": {
     "$schema": "http://json.schemastore.org/prettierrc",
-    "arrowParens": "avoid",
+    "arrowParens": "always",
     "bracketSpacing": false,
     "jsxBracketSameLine": false,
     "jsxSingleQuote": false,
@@ -120,7 +124,14 @@
       "comma-dangle": "off",
       "object-curly-newline": "off",
       "implicit-arrow-linebreak": "off",
-      "function-paren-newline": "off"
+      "function-paren-newline": "off",
+      "indent": "off",
+      "no-tabs": "off",
+      "key-spacing": "off",
+      "semi": "off",
+      "arrow-spacing": "off",
+      "padded-blocks": "off",
+      "spaced-comment": "off"
     }
   },
   "eslintIgnore": [
@@ -143,7 +154,6 @@
           ]
         }
       ],
-      "block-opening-brace-space-before": "always",
       "declaration-colon-space-after": "always",
       "declaration-colon-space-before": "never",
       "declaration-block-single-line-max-declarations": 1,
@@ -181,7 +191,8 @@
       "string-quotes": null,
       "rule-empty-line-before": null,
       "at-rule-empty-line-before": null,
-      "indentation": null
+      "indentation": null,
+      "block-opening-brace-space-before": null
     }
   }
 }

@@ -1,0 +1,140 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: $white;
+  padding: 0.5rem 0;
+  transition: all $speed;
+
+  .fp-viewing-header & {
+    background-color: transparent;
+
+    @include md {
+      padding: 2rem 0;
+    }
+  }
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    color: $dark;
+    width: 8.625rem;
+
+    @include lg {
+      width: 12.188rem;
+    }
+
+    > svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .fp-viewing-header & {
+      color: $white;
+
+      @include lg {
+        width: 12.188rem;
+      }
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    color: $dark;
+
+    @include md {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+
+    .fp-viewing-header & {
+      color: $white;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    padding-left: 0;
+
+    @include md {
+      display: flex;
+      flex-direction: row;
+    }
+    &--open {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      margin: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      background-color: $white;
+    }
+  }
+
+  &__item {
+    & + & {
+      margin-top: 2rem;
+
+      @include md {
+        margin-top: 0;
+        margin-left: 1em;
+      }
+    }
+  }
+
+  &__link {
+    padding: 0.5em;
+    text-decoration: none;
+    font-weight: $fw-regular;
+    color: $dark;
+
+    @include md {
+      .fp-viewing-header & {
+        color: $white;
+      }
+    }
+
+    &:focus,
+    &:hover,
+    &.active {
+      color: $c4;
+
+      .fp-viewing-header & {
+        color: $c4;
+
+        @include md {
+          color: $c2;
+        }
+      }
+    }
+  }
+
+  &__close {
+    @include md {
+      display: none;
+    }
+  }
+}

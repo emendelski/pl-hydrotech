@@ -1,38 +1,300 @@
-@import url('https://fonts.googleapis.com/css?family=Rubik:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import '~fullpage.js/dist/fullpage.min.css';
+@import '~rfs/scss';
 
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
+@import 'mixins';
+@import 'variables';
+@import 'global';
+@import 'typography';
+@import 'navbar';
+@import 'section';
+@import 'animations';
+@import 'cookies';
+
+// Sections
+.header {
+  background-image: url('../images/header.jpg');
 }
 
-html {
-  box-sizing: border-box;
-  overflow: hidden;
+.problem {
+  background-image: url('../images/problem.jpg');
 }
 
-body {
-  background: #0f2027;
-  background: linear-gradient(to left, #2c5364, #203a43, #0f2027);
-  font-family: Rubik, sans-serif;
-  padding: 3rem;
-  margin: 0;
-  color: #fff;
-  width: 100vw;
-  height: 100vh;
+.solution {
+  background-image: url('../images/solution.jpg');
 }
 
-.content {
+.tech {
+  background-image: url('../images/technology.jpg');
+
+  &__grid {
+    list-style-type: none;
+    margin-top: 3rem;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+
+    @include md {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+  }
+  &__icon {
+  }
+  &__title {
+    text-align: center;
+  }
+}
+
+.about {
+  &__grid {
+    @include md {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__content {
+    @include md {
+      flex: 0 0 40%;
+      max-width: 40%;
+      padding-right: 2rem;
+    }
+  }
+  &__map {
+    margin-top: 3rem;
+    @include md {
+      margin-top: 0;
+      flex: 0 0 60%;
+      max-width: 60%;
+    }
+  }
+}
+
+.team {
+  background-image: url('../images/team.jpg');
+  &__grid {
+    list-style-type: none;
+    padding-left: 0;
+    @include md {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 4rem;
+      justify-content: center;
+    }
+  }
+  &__item {
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include md {
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-bottom: 3rem;
+    }
+
+    @include xl {
+      text-align: left;
+      flex: 0 0 20%;
+      max-width: 20%;
+      margin-bottom: 0;
+    }
+    & + & {
+      margin-top: 3rem;
+
+      @include md {
+        margin-top: 0;
+      }
+    }
+  }
+  &__figure {
+    transition: transform $speed;
+    cursor: pointer;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 5px solid transparent;
+    width: 12.75rem;
+    height: 12.75rem;
+
+    &:focus,
+    &:hover {
+      transform: scale(1.05);
+      transform-origin: center;
+      outline-color: $c1;
+    }
+  }
+  &__name {
+    margin-bottom: 0.2rem;
+  }
+  &__position {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  transform: scale(0);
   position: absolute;
-  left: 3rem;
-  bottom: 3rem;
-  margin: 0;
-  padding: 0;
+  @include md {
+    align-items: center;
+  }
+  &--open {
+    position: fixed;
+    transform: scale(1);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &__backdrop {
+    background-color: $bdrop;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity $speed;
+    .modal--open & {
+      opacity: 1;
+    }
+  }
+  &__body {
+    background-color: $white;
+    position: relative;
+    width: 100%;
+    max-width: 42rem;
+    padding: 5rem 1rem 1rem;
+    color: $dark;
+    box-shadow: 0 0.813rem 1.5rem rgba(black, 0.5);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform $speed, opacity $speed;
+    overflow-y: auto;
+    @include md {
+      border-left: 2rem solid $c3;
+      padding: 3rem 3rem 5rem 10rem;
+      overflow: initial;
+    }
+    .modal--open & {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  &__figure {
+    margin: 0;
+    margin-bottom: 1rem;
+    width: 12.75rem;
+    height: 12.75rem;
+    @include md {
+      position: absolute;
+      top: 2rem;
+      left: -8rem;
+    }
+  }
+  &__name {
+    color: $c3;
+    margin-top: 0;
+    margin-bottom: 0;
+    @include font-size(1.375rem);
 
-  > strong {
+    & + p {
+      margin-top: 0;
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    z-index: 9;
+    @include md {
+      top: 1rem;
+    }
+  }
+}
+
+.contact {
+  background-image: url('../images/contact.jpg');
+
+  &__grid {
+    @include md {
+      display: flex;
+      align-items: stretch;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+  &__form {
+    margin-top: 4rem;
+    @include md {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+  &__address {
+    font-style: normal;
+    margin-bottom: 3rem;
+  }
+  &__link {
+    margin-top: 2rem;
+
+    @include md {
+      margin-top: auto;
+    }
+  }
+}
+
+.form {
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+
+  &__label {
     display: block;
-    font-size: 1.125em;
-    margin-bottom: 0.25em;
-    letter-spacing: 0.1em;
+    margin: 1rem 0 0.5rem 1rem;
+  }
+  &__input {
+    width: 100%;
+    border-radius: 1.25rem;
+    border: 0;
+    background-color: $white;
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 0.7rem 1rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__submit {
+    margin-left: auto;
+    margin-top: 1.5rem;
   }
 }

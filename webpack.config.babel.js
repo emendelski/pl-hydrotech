@@ -19,7 +19,7 @@ const webpackConfig = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: chunkData => {
+    filename: (chunkData) => {
       return chunkData.chunk.name === 'docs' ? `${DOCS_PATH}/[name].js` : 'scripts/[name].js';
     },
   },
@@ -135,7 +135,7 @@ const webpackConfig = {
   plugins: [
     new StyleLintPlugin(),
     new MiniCssExtractPlugin({
-      moduleFilename: chunk => {
+      moduleFilename: (chunk) => {
         return chunk.name === 'docs' ? `${DOCS_PATH}/[name].css` : 'styles/[name].css';
       },
     }),

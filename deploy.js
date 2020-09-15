@@ -35,11 +35,11 @@ config = Object.assign({}, basicConfig, configInclude[method]);
 // use with promises
 ftpDeploy
   .deploy(config)
-  .then(res => {
+  .then((res) => {
     const response = res || '';
     console.log('⭐  Upload finished!');
   })
-  .catch(err => console.log(err));
+  .catch((err) => console.log(err));
 
 ftpDeploy.on('uploaded', function (data) {
   const count = data.transferredFileCount + '/' + data.totalFilesCount;
